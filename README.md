@@ -12,14 +12,15 @@ This is a new homebrew menu loading userland exploit for the old3ds browser, Spi
 
 An old3ds (or old2ds) on firmwares:<br>
 ```
-11.9.0-42 -> 11.13.0-45 for USA or JAPAN
+11.9.0-42 -> 11.13.0-45 for USA, JAPAN
 11.10.0-43 -> 11.13.0-45 for EUROPE
+11.9.0-36 -> 11.13.0-39 for KOREA
 ```
 Note: The last number on the firmware version matters. If you updated from a cartridge to your current firmware, you will need to update to latest firmware as your browser would have been erased by the cart update.
 
 ## Directions 
 
-1) In the release folder, find your region (USA, EUROPE, JAPAN) and take the two files *inside* that folder and put them on the root of your sd card. Do not copy the entire folder over.
+1) In the release folder, find your region (USA, EUROPE, JAPAN, KOREA) and take all files *inside* that folder and put them on the root of your sd card. Do not copy the entire region folder over, just its contents.
 2) Place the homebrew launcher boot.3dsx from [here](https://github.com/fincs/new-hbmenu/releases/tag/v2.2.0) also on the root of your sd card.
 3) With wifi on and working, scan [this QR](http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=https%3A%2F%2Fzoogie.github.io%2Fweb%2Fnbhax&qzone=1&margin=0&size=400x400&ecc=L) after pressing L+R should buttons together and tapping the QR button on the bottom screen. The link to the sploit page is https://zoogie.github.io/web/nbhax if you want to type it in manually and/or bookmark it.
 4) Click on the "PROCEED TO HAXX" button and the exploit should then load the homebrew menu. Make sure to add homebrews to the sdmc:/3ds folder first in order to have something to run. See other guides online about what you can do with homebrew.
@@ -49,8 +50,8 @@ Solution: Go to your browser's settings and select Clear History and Delete Cook
 Q: Will you support new3ds, new2ds?<br>
 A: Always have :p https://github.com/zoogie/new-browserhax
 
-Q: Will you support the other 3 minor regions (Korea, China, Taiwan)?<br>
-A: I'll think about it. It should be possible but it would be a lot of work, and I don't have consoles in these regions on hand for testing.
+Q: Will you support the other 2 minor regions (China, Taiwan)?<br>
+A: I'll think about it. It should be possible but it would be a lot of work. I don't have consoles in these regions on hand for testing aside from ctrnand transfers, which might not be accurate.
 
 Q: Can I install [unSAFE_MODE](https://github.com/zoogie/unSAFE_MODE) with this to get cfw?<br>
 A: Absolutely, be my guest : ) You can boot slotTool.3dsx and install the hacked wifi slots, then run the unSAFE_MODE exploit. No explicit directions will be given for that here, but guides should pop up soon with directions.
