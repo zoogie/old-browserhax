@@ -1,5 +1,7 @@
 # old-browserhax
 
+# This Exploit has been patched on 11.14.0-46, will no longer work on any firmware
+
 ## Thanks 
 - MrNbaYoh for his [nice](https://mrnbayoh.github.io/blog/exploiting-the-3ds-browsers-p1/) [blogs](https://mrnbayoh.github.io/blog/exploiting-the-3ds-browsers-p2/).
 - Yellows8 for the hbmenu loader code: https://github.com/yellows8/3ds_browserhax_common
